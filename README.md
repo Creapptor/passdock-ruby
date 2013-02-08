@@ -74,12 +74,20 @@ The second argument is the template id, the third one if you want debug informat
 
 #### Update a Pass
 
-The first argument is the a JSON jash containing the Pass structure, more informations on [api.passdock.com/doc](https://api.passdock.com/doc).
-The second argument is the template id, the third one if you want debug informations and the last one exanded errors.
+The first argument is the a JSON hash containing the Pass structure, more informations on [api.passdock.com/doc](https://api.passdock.com/doc).
+The second argument is the template id, the third the pass id, the fourth one if you want debug informations and the last one exanded errors.
 
     pp Passdock.update_pass('{"serial_number":"5678", "gate":"15"}', 94, 82, true, false)
 
+#### Update a Template
+
+The first argument is the a JSON hash containing the Template structure, more informations on [api.passdock.com/doc](https://api.passdock.com/doc).
+The second argument is the template id, the third one if you want debug informations and the last one exanded errors.
+
+    pp Passdock.update_template('{"gate":"15"}', 94, true, false)
+
 #### Download a Pass
+
 
 The first parameter is the Pass ID, the second its template ID
 
