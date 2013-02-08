@@ -22,11 +22,11 @@ module Passdock
   end
   
   def self.templates
-    self.get("#{@@api_base}/templates?api_token=#{@@api_key}")
+    self.get("#{@@api_base}/templates.json?api_token=#{@@api_key}")
   end
   
   def self.template(id)
-    self.get("#{@@api_base}/templates/#{id}?api_token=#{@@api_key}")
+    self.get("#{@@api_base}/templates/#{id}.json?api_token=#{@@api_key}")
   end
   
   def self.destroy_template(family_id, errors)
@@ -37,15 +37,15 @@ module Passdock
         :api_token => @@api_key
       }
     }  
-    self.delete("#{@@api_base}/templates/#{family_id}", options)      
+    self.delete("#{@@api_base}/templates/#{family_id}.json", options)      
   end 
   
   def self.pass(pass_id, family_id)
-    self.get("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}?api_token=#{@@api_key}")
+    self.get("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}.json?api_token=#{@@api_key}")
   end
   
   def self.download_pass(pass_id, family_id)
-    self.get("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}?api_token=#{@@api_key}&show=true")
+    self.get("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}.json?api_token=#{@@api_key}&show=true")
   end
   
   def self.create_pass(pass, family_id, debug, errors)
@@ -59,7 +59,7 @@ module Passdock
         :pass => pass
       }
     }  
-    self.post("#{@@api_base}/templates/#{family_id}/passes", options)      
+    self.post("#{@@api_base}/templates/#{family_id}/passes.json", options)      
   end  
   
   def self.update_pass(pass, pass_id, family_id, debug, errors)
@@ -73,7 +73,7 @@ module Passdock
         :pass => pass
       }
     }  
-    self.put("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}", options)      
+    self.put("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}.json", options)      
   end  
   
   def self.destroy_pass(pass_id, family_id, errors)
@@ -84,6 +84,6 @@ module Passdock
         :api_token => @@api_key
       }
     }  
-    self.delete("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}", options)      
+    self.delete("#{@@api_base}/templates/#{family_id}/passes/#{pass_id}.json", options)
   end    
 end

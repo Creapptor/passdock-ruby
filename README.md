@@ -12,7 +12,7 @@ Use
     gem install httparty
     gem install passdock
 
-to istall them.
+to install them.
 
 ### Get your authentication token
 

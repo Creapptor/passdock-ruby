@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('passdock', '0.1.5') do |p|
+Echoe.new('passdock', '0.1.6') do |p|
   p.description     = "Talk with Passdock API"
   p.url             = "http://github.com/Creapptor/passdock-ruby"
   p.author          = "Creapptor S.A."
